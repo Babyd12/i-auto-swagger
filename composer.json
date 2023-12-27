@@ -2,7 +2,7 @@
     "name": "micre/swagger-installer",
     "description": "A mini library to automate Swagger installation in Laravel projects.",
     "require": {
-        "php": "^7.2",
+        "php": ">=^7.2",
         "darkaonline/l5-swagger": "^6.0",
         "tymon/jwt-auth": "^1.0",
         "l5swagger/l5swagger": "^8.0"
