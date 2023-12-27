@@ -23,7 +23,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-           "php ./install.php"
+           "php ../../../../install.php"
         ]
     },
     "version": "1.0.2"
