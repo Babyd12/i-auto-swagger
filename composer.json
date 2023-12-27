@@ -9,7 +9,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Mcire\\L5AutoSwagger\\Commands\\InstallSwagger::handle"
+            "Mcire\\l5-auto-swagger\\Commands\\InstallSwagger::handle"
         ]
     },
     "minimum-stability": "dev",
