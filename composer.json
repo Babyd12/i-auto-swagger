@@ -1,24 +1,37 @@
 {
     "name": "mcire/l5-auto-swagger",
-    "description": "This package helps to install Swagger automatically.",
+    "description": "This package helps to install Swagger automatically with one command",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Mcire\\L5AutoSwagger\\": "src/"
+            "Mcire\\L5AutoSwagger\\": "vendor/mcire/l5-auto-swagger/src/"
         }
     },
-    "scripts": {
-        "post-install-cmd": [
-            "cd __ROOT__ && composer require darkaonline/l5-swagger",
-            "cd __ROOT__ && php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
-            "cd __ROOT__ && php artisan l5-swagger:generate"
-        ]
-    },
-    "minimum-stability": "dev",
+    
+    "files": [
+        "src/Commands/InstallSwagger.php"
+    ],
+    "authors": [
+        {
+            "name": "babyd12"
+        }
+    ],
+    "minimum-stability": "stable", 
     "require": {
         "php": ">=5.3.0",
         "darkaonline/l5-swagger": "^8.0"
     },
-    "version": "1.0.4"
+    "scripts": {
+        "post-install-cmd": [
+            "composer require darkaonline/l5-swagger",
+            "php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
+            "php artisan l5-swagger:generate"
+        ],
+        "post-update-cmd": [
+            "composer require darkaonline/l5-swagger",
+            "php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
+            "php artisan l5-swagger:generate"
+        ]
+    },
+    "version": "1.0.2"
 }
-
