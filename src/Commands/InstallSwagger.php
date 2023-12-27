@@ -12,9 +12,9 @@ class InstallSwagger
         $io->write('Installing Swagger...');
 
         // Commandes d'installation de Swagger
-        exec('composer require darkaonline/l5-swagger');
-        exec('php artisan vendor:publish --provider="L5Swagger\L5SwaggerServiceProvider"');
-        exec('php artisan l5-swagger:generate');
+        passthru('composer require darkaonline/l5-swagger');
+        passthru('php artisan vendor:publish --provider="L5Swagger\L5SwaggerServiceProvider"');
+        passthru('php artisan l5-swagger:generate');
 
         $io->write('Swagger installed successfully.');
     }
