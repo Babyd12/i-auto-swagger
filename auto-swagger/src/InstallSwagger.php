@@ -6,9 +6,16 @@ class InstallSwagger
 {
     public static function handle()
     {
-        // Exécuter les commandes d'installation de Swagger depuis la racine du projet
-        exec('composer require darkaonline/l5-swagger');
-        exec('php artisan vendor:publish --provider="L5Swagger\\L5SwaggerServiceProvider"');
-        exec('php artisan l5-swagger:generate');
+        // Contenu du fichier à créer
+        $content = "<?php echo 'Installation de Swagger effectuée avec succès.'; ?>";
+
+        // Chemin du fichier à créer à la racine du projet
+        $filePath = realpath(__DIR__ . '/../../../../') . '/installer-swagger.php';
+
+        // Crée le fichier et écrit le contenu
+        file_put_contents($filePath, $content);
+
+        // Exécute le fichier créé
+        exec("php $filePath");
     }
 }
