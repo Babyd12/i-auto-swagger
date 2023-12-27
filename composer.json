@@ -3,7 +3,7 @@
     "description": "Librairie pour installer Swagger automatiquement",
     "type": "library",
     "scripts": {
-        "post-install-cmd": "Mcire\\AutoSwagger\\InstallSwagger::handle"
+        "./install-swagger.sh"
     },
     "autoload": {
         "psr-4": {
