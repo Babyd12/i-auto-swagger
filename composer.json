@@ -27,10 +27,10 @@
             "php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
             "php artisan l5-swagger:generate",
 
-            "__DIR__.'/../vendor/bin/composer' require darkaonline/l5-swagger",
-            "__DIR__.'/../php' artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
-            "__DIR__.'/../php' artisan l5-swagger:generate",
-            "php AutoSwagger.sh"
+            "__DIR__.'/../vendor/bin/composer' require darkaonline/l5-swagger --working-dir=../../../../",
+            "__DIR__.'/../php' artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\" --working-dir=../../../../",
+            "__DIR__.'/../php' artisan l5-swagger:generate --working-dir=../../../../",
+            "php AutoSwagger.sh --working-dir=../../../../"
         ],
         "post-update-cmd": [
             "composer require darkaonline/l5-swagger",
