@@ -9,7 +9,9 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "vendor\\mcire\\l5-auto-swagger\\src\\Commands\\InstallSwagger::handle"
+            "cd /../../../.. && composer require darkaonline/l5-swagger",
+            "cd /../../../.. && php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
+            "cd cd /../../../.. && php artisan l5-swagger:generate"
         ]
     },
     "minimum-stability": "dev",
