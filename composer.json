@@ -1,20 +1,46 @@
 {
-    "name": "micre/swagger-installer",
-    "description": "A mini library to automate Swagger installation in Laravel projects.",
+    "name": "mcire/l5-auto-swagger",
+    "description": "This package helps to install Swagger automatically with one command",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mcire\\L5AutoSwagger\\": "vendor/mcire/l5-auto-swagger/src/"
+        }
+    },
+    
+    "files": [
+        "src/Commands/InstallSwagger.php"
+    ],
+    "authors": [
+        {
+            "name": "babyd12"
+        }
+    ],
+    "minimum-stability": "stable", 
     "require": {
-        "php": ">=6.2.0",
-        "darkaonline/l5-swagger": "^6.0",
-        "tymon/jwt-auth": "^1.0",
-        "l5swagger/l5swagger": "^8.0"
+        "php": ">=5.3.0",
+        "darkaonline/l5-swagger": "*"
     },
     "scripts": {
         "post-install-cmd": [
-            "Micre\\SwaggerInstaller\\Installer::installSwagger"
+            "composer require darkaonline/l5-swagger",
+            "php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
+            "php artisan l5-swagger:generate",
+
+            "__DIR__.'/../vendor/bin/composer' require darkaonline/l5-swagger",
+            "__DIR__.'/../php' artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
+            "__DIR__.'/../php' artisan l5-swagger:generate",
+            "php AutoSwagger.sh"
+        ],
+        "post-update-cmd": [
+            "composer require darkaonline/l5-swagger",
+            "php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
+            "php artisan l5-swagger:generate",
+
+            "__DIR__.'/../vendor/bin/composer' require darkaonline/l5-swagger",
+            "__DIR__.'/../php' artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
+            "__DIR__.'/../php' artisan l5-swagger:generate"
         ]
     },
-    "autoload": {
-        "psr-4": {
-            "Micre\\SwaggerInstaller\\": "src/"
-        }
-    }
+    "version": "1.0.2"
 }
