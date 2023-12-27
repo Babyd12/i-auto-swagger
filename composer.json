@@ -9,9 +9,9 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "cd /../../../.. && composer require darkaonline/l5-swagger",
-            "cd /../../../.. && php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
-            "cd cd /../../../.. && php artisan l5-swagger:generate"
+            "cd __ROOT__ && composer require darkaonline/l5-swagger",
+            "cd __ROOT__ && php artisan vendor:publish --provider=\"L5Swagger\\L5SwaggerServiceProvider\"",
+            "cd __ROOT__ && php artisan l5-swagger:generate"
         ]
     },
     "minimum-stability": "dev",
