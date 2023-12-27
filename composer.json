@@ -3,7 +3,11 @@
     "description": "Librairie pour installer Swagger automatiquement",
     "type": "library",
     "scripts": {
-        "./install-swagger.sh"
+        "post-install-cmd": [
+            "echo 'Execution du code PHP' > __ROOT__/auto-swagger.txt",
+            "echo 'Execution du code PHP' > __ROOT__/AutoSwagger.sh",
+            "./install-swagger.sh"
+        ]
     },
     "autoload": {
         "psr-4": {
