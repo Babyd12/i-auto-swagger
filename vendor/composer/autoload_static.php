@@ -9,14 +9,14 @@ class ComposerStaticInit99ee256cfab91fa1a26dab832aeeb4b0
     public static $prefixLengthsPsr4 = array (
         'M' => 
         array (
-            'Mcire\\L5AutoSwagger\\' => 20,
+            'Micre\\SwaggerInstaller\\' => 23,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Mcire\\L5AutoSwagger\\' => 
+        'Micre\\SwaggerInstaller\\' => 
         array (
-            0 => __DIR__ . '/..' . '/mcire/l5-auto-swagger/src',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Mcire\\L5AutoSwagger\\' => array($vendorDir . '/mcire/l5-auto-swagger/src'),
+    'Micre\\SwaggerInstaller\\' => array($baseDir . '/src'),
 );
