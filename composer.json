@@ -1,17 +1,20 @@
 {
-    "name": "mcire/auto-swagger",
-    "description": "Librairie pour installer Swagger automatiquement",
-    "type": "library",
+    "name": "micre/swagger-installer",
+    "description": "A mini library to automate Swagger installation in Laravel projects.",
+    "require": {
+        "php": "^7.2",
+        "darkaonline/l5-swagger": "^6.0",
+        "tymon/jwt-auth": "^1.0",
+        "l5swagger/l5swagger": "^8.0"
+    },
     "scripts": {
         "post-install-cmd": [
-            "echo 'Execution du code PHP' > __ROOT__/auto-swagger.txt",
-            "echo 'Execution du code PHP' > __ROOT__/AutoSwagger.sh",
-            "./install-swagger.sh"
+            "Micre\\SwaggerInstaller\\Installer::installSwagger"
         ]
     },
     "autoload": {
         "psr-4": {
-            "Mcire\\AutoSwagger\\": "src/"
+            "Micre\\SwaggerInstaller\\": "src/"
         }
     }
 }
