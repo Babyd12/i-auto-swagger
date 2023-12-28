@@ -9,7 +9,7 @@
     },
     
     "files": [
-        "src/Commands/InstallSwagger.php"
+        "src/Console/Installer.php"
     ],
     "authors": [
         {
@@ -22,9 +22,8 @@
         "darkaonline/l5-swagger": "*"
     },
     "scripts": {
-        "post-install-cmd": [
-           "php ../../../../install.php"
-        ]
+        "post-install-cmd": "App\\Console\\Installer::postInstall"
+       
     },
     "version": "1.0.2"
 }
