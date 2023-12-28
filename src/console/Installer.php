@@ -6,8 +6,8 @@ class Installer
 {
     public static function installSwagger()
     {
-        echo "Installing Swagger...\n";
-        echo "Bonjour tout le monde depuis l'installateur !\n";
+        fwrite(STDOUT, "Installing Swagger...\n");
+        fwrite(STDOUT, "Bonjour tout le monde depuis l'installateur !\n");
         // Composer require
         // system('composer require darkaonline/l5-swagger');
 
